@@ -1,0 +1,67 @@
+.mainDiv {
+    background-color: lightgray;
+    width: 60%;
+    max-height: 70vh; /* Adjusted to viewport height for demonstration */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensures children are spaced out */
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    border: 10px solid rgb(122, 122, 122);
+    overflow-y: auto; 
+}
+
+.titleHeader {
+    align-self: center;
+}
+
+.inputForm {
+    margin-top: auto; /* Pushes the form to the bottom */
+    width: 100%; /* Adjust as necessary */
+}
+
+/* Adding styles for the ul to ensure it fills the available space if needed */
+ul {
+    overflow-y: auto; /* Allows scrolling if many messages */
+    list-style-type: none; /* Removes bullet points */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+}
+
+.bold {
+    font-weight: bold;
+  }
+
+.messageBoard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#post{
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .mainDiv {
+      height: 90vh; /* Optionally adjust the height for smaller devices */
+      width: 90vw;
+      padding: 5px; /* Reduce padding on smaller screens */
+    }
+  
+    /* Adjust font sizes, padding, or other properties as needed */
+    .messageBoard li p {
+      font-size: 14px; /* Smaller font size for smaller screens */
+    }
+    ul{
+        align-items: flex-start;
+        justify-content: center;
+        width: 70%;
+    }
+  }

@@ -1,0 +1,89 @@
+.loginContainer {
+    background-color: lightgray;
+    width: 50vw;
+    max-width: 650px;
+    height: 50vh;
+    max-height: 250px; /* Adjusted to viewport height for demonstration */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensures children are spaced out */
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    border: 10px solid rgb(122, 122, 122);
+}
+
+.titleHeader {
+    align-self: center;
+}
+
+.inputForm {
+    margin-top: auto; /* Pushes the form to the bottom */
+    width: 20%; /* Adjust as necessary */
+    align-items: center;
+    justify-content: center;
+}
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    width: 35%;;
+}
+
+.usernameInput, .passwordInput, .confirmPasswordInput{
+    margin-bottom: 5px;
+}
+
+.submitBtn{
+    width: 10vh;
+    align-self: center;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.submitBtn:hover{
+    background-color: black;
+    color: white;
+}
+
+.usernameInput, .passwordInput, .confirmPasswordInput{
+    border:2px solid lightslategray;
+    padding: 3px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+.usernameInput:hover, .passwordInput:hover, .confirmPasswordInput:hover{
+    border:2px solid black;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .registerForm{
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+    .loginContainer{
+        height: 30vh;
+        max-height: 60vh;
+        width: 80vw;
+        
+    }
+    .inputForm{
+        width: 60%;
+        font-size: 25px;
+    }
+    .usernameInput, .passwordInput, .confirmPasswordInput{
+        width: 70%;
+        font-size: 20px;
+    
+    }
+    .submitBtn{
+        font-size: 20px;
+        width: 35vw;
+        margin-top: 15px;
+    }
+  }
