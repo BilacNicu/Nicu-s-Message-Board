@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const secret = "secret";
 
 function authenticateToken(req, res, next) {
   // Try to retrieve the token from the "Authorization" header or cookies
@@ -11,7 +12,7 @@ function authenticateToken(req, res, next) {
     return res.sendStatus(401); // No token provided
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+  jwt.verify(token, secret, (err, user) => {
     if (err) {
       return res.sendStatus(403); // Invalid token
       
