@@ -4,12 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 var app = express();
 
 var allRouter = require('./routes/routes.js');
 
-mongoose.connect('mongodb://localhost:27017/messages', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = process.env.MONGODB_URI;
+mongoose.connect( db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...', err));
 
@@ -51,9 +53,9 @@ app.use(function(err, req, res, next) {
 
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server listening on port ${PORT}`);
+const listenPort = process.env.PORT; // PORT = 3000 in the .env file
+app.listen(listenPort, '0.0.0.0', () => {
+  console.log(`Server listening on port ${listenPort}`);
 });
 
 module.exports = app;
