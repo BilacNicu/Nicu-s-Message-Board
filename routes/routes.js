@@ -5,7 +5,7 @@ const User = require('../models/user.js');
 const jwt = require('jsonwebtoken');
 const authenticateToken = require("../auth/AuthenticateToken.js");
 require('dotenv').config();
-
+const secret = "secret";
 
   router.post('/messages', authenticateToken, async (req, res) => {
     console.log("Messages post called");
@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
       // Generate JWT
       const token = jwt.sign(
         { username: user.username }, // This is the payload, which includes the user information.
-        process.env.JWT_SECRET, // The secret key used to sign the token. Ensure you have this in your environment variables.
+        secret, // The secret key used to sign the token. Ensure you have this in your environment variables.
         { expiresIn: '2h' } // Set the token to expire in 2 hour. You can adjust the expiration as needed.
       );
   

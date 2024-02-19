@@ -10,7 +10,7 @@ var app = express();
 
 var allRouter = require('./routes/routes.js');
 
-const db = process.env.MONGODB_URI;
+const db = "mongodb+srv://nicubilac:LexusGS3503.5@messageboard.jxctys4.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect( db )
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...', err));
@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
 
 });
 
-const listenPort = process.env.PORT || 8080; // PORT = 3000 in the .env file
+const listenPort = 8080; // PORT = 3000 in the .env file
 app.listen(listenPort, '0.0.0.0', () => {
   console.log(`Server listening on port ${listenPort}`);
 });
